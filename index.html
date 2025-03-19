@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varsity Men's Glee Club at Illinois</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background: white;
+            color: #13294B;
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #13294B;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            z-index: 1000;
+            left: 0;
+            right: 0;
+        }
+        .navbar .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .navbar img {
+            height: 50px;
+            margin-left: 15px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: #FA6300;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .hero {
+            width: 100%;
+            height: 60vh;
+            background: url('hero.png') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            position: relative;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1 {
+            color: #FA6300;
+        }
+        p {
+            font-size: 18px;
+        }
+        .footer {
+            background: #13294B;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #FA6300;
+            font-size: 20px;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Glee Club Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#join">Join</a>
+            <a href="#connect">Connect</a>
+        </div>
+    </div>
+    
+    <div class="hero">
+        <h1>Varsity Men's Glee Club at Illinois</h1>
+    </div>
+    
+    <div id="home" class="section">
+        <p>Bringing musical brotherhood to the University of Illinois since 1886.</p>
+    </div>
+    
+    <div id="about" class="section">
+        <h1>About Us</h1>
+        <p>Founded in 1886, the Varsity Men’s Glee Club is the oldest recognized Registered Student Organization on campus, and from its beginning, it has upheld a standard of musical excellence and brotherhood that continues today. <br /><br />
+
+As the premiere all-male ensemble within the School of Music Choral Division, the Varsity Men’s Glee Club (VMGC) members serve as ambassadors of the University of Illinois while participating in numerous US and international tours and campus events, such as the Dad’s Day and Mom’s Day festivities.
+
+<br /><br />Not only is the Varsity Men’s Glee Club a part of the School of Music, but it is also the oldest Registered Student Organization on campus, celebrating over 125 years of excellence. The Varsity Men’s Glee Club consists of both undergraduate and graduate students. We are all gathered for our love of music and passion for singing.
+
+<br /><br />In addition to the main chorus, Varsity Men’s Glee Club also features a smaller subset a cappella group. Check out The Other Guys!</p>
+    <div id="events" class="section">
+        <h1>Upcoming Events</h1>
+        <p><strong>"You have a Home" - Annual Spring Concert</strong></p>
+        <p><strong>Date:</strong> April 12</p>
+        <p><strong>Time:</strong> 7:30 PM</p>
+        <p><strong>Location:</strong> Smith Memorial Hall</p>
+        <p><strong>Free admission, no tickets required.</strong></p>
+    </div>
+    
+    <div id="join" class="section">
+        <h1>Join Us</h1>
+        <p>Are you interested in joining the Varsity Men's Glee Club? Auditions are held at the beginning of each semester. Click <a href="https://music.illinois.edu/perform/ensemble-auditions/audition-information-for-university-choirs/"target="_blank">here</a> for more information!</p>
+    </div>
+    
+    <div id="connect" class="section">
+        <h1>Connect With Us</h1>
+        <p>Email: uiucmensglee@gmail.com</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/uiucmensglee" target="_blank">Facebook: @uiucmensglee</a>
+            <a href="https://www.instagram.com/illinoismensglee" target="_blank">Instagram: @illinoismensglee</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 Varsity Men's Glee Club at Illinois. All rights reserved.</p>
+    </div>
+</body>
+</html>
